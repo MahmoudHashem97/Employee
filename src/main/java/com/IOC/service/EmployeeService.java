@@ -48,4 +48,10 @@ public class EmployeeService {
         employeRepo.save(employe);
         return employe;
     }
+    public Employe ubdatePassword (int id,Employe name){
+        Employe employe =employeRepo.findById(id).orElseThrow();
+        employe.setPassword(name.getPassword());
+        employeRepo.save(employe);
+        return employe;
+    }
 }

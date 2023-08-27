@@ -40,4 +40,8 @@ public class EmployeController {
     public Employe updateEmail(@PathVariable("id") int id,@RequestBody Employe request){
         return employeeService.ubdateEmail(id,request);
     }
+    @PatchMapping("/employeepassword/{id}")
+    public Employe updatePaswrord(@PathVariable("id") int id,@RequestBody Employe request){
+        return employeeService.ubdatePassword(id,request);
+    }
 }
