@@ -31,7 +31,10 @@ public class EmployeController {
         return employeeService.findAll();
     }
 
-
+    @PatchMapping("/employee/{id}")
+    public Employe update(@PathVariable("id") int id,@RequestBody Employe request){
+        return employeeService.ubdateName(id,request);
+    }
 
 
 }

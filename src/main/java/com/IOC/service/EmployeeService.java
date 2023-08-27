@@ -33,7 +33,12 @@ public class EmployeeService {
 
     public List<Employe> findAll (){
         return  employeRepo.findAll();
-
     }
 
+    public Employe ubdateName (int id,Employe name){
+        Employe employe =employeRepo.findById(id).orElseThrow();
+        employe.setFullName(name.getFullName());
+        employeRepo.save(employe);
+        return employe;
+    }
 }
