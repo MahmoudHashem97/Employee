@@ -41,4 +41,11 @@ public class EmployeeService {
         employeRepo.save(employe);
         return employe;
     }
+
+    public Employe ubdateEmail (int id,Employe name){
+        Employe employe =employeRepo.findById(id).orElseThrow();
+        employe.setEmail(name.getEmail());
+        employeRepo.save(employe);
+        return employe;
+    }
 }

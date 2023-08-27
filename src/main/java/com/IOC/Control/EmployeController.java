@@ -36,5 +36,8 @@ public class EmployeController {
         return employeeService.ubdateName(id,request);
     }
 
-
+    @PatchMapping("/employeeEmail/{id}")
+    public Employe updateEmail(@PathVariable("id") int id,@RequestBody Employe request){
+        return employeeService.ubdateEmail(id,request);
+    }
 }
