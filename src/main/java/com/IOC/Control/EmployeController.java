@@ -6,6 +6,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/")
@@ -23,6 +25,13 @@ public class EmployeController {
     public void deleteEmployee (@PathVariable("id") int id){
         employeeService.deleteEmployee(id);
     }
+
+    @GetMapping("/employee")
+    public List<Employe> getAll(){
+        return employeeService.findAll();
+    }
+
+
 
 
 }

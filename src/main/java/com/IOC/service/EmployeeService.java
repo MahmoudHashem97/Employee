@@ -5,6 +5,8 @@ import com.IOC.reprosatory.EmployeRepo;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 public class EmployeeService {
@@ -27,6 +29,11 @@ public class EmployeeService {
 
     public void deleteEmployee (int id ){
         employeRepo.deleteById(id);
+    }
+
+    public List<Employe> findAll (){
+        return  employeRepo.findAll();
+
     }
 
 }
