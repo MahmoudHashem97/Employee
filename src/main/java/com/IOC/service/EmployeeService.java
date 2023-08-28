@@ -1,7 +1,7 @@
 package com.IOC.service;
 
-import com.IOC.model.Employe;
-import com.IOC.reprosatory.EmployeRepo;
+import com.IOC.model.Employee;
+import com.IOC.repository.EmployeRepo;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -15,14 +15,14 @@ public class EmployeeService {
 
 
 
-    public static Employe EmployeeRequestMapper(Employe employeeRequest){
-        return Employe.builder()
+    public static Employee EmployeeRequestMapper(Employee employeeRequest){
+        return Employee.builder()
                 .email(employeeRequest.getEmail())
                 .fullName(employeeRequest.getFullName())
                 .password(employeeRequest.getPassword())
                 .build();
     }
-    public Employe creatEmploye(Employe employe){
+    public Employee creatEmploye(Employee employe){
         employeRepo.save(employe);
         return employe;
     }
@@ -31,25 +31,25 @@ public class EmployeeService {
         employeRepo.deleteById(id);
     }
 
-    public List<Employe> findAll (){
+    public List<Employee> findAll (){
         return  employeRepo.findAll();
     }
 
-    public Employe ubdateName (int id,Employe name){
-        Employe employe =employeRepo.findById(id).orElseThrow();
+    public Employee ubdateName (int id, Employee name){
+        Employee employe =employeRepo.findById(id).orElseThrow();
         employe.setFullName(name.getFullName());
         employeRepo.save(employe);
         return employe;
     }
 
-    public Employe ubdateEmail (int id,Employe name){
-        Employe employe =employeRepo.findById(id).orElseThrow();
+    public Employee ubdateEmail (int id, Employee name){
+        Employee employe =employeRepo.findById(id).orElseThrow();
         employe.setEmail(name.getEmail());
         employeRepo.save(employe);
         return employe;
     }
-    public Employe ubdatePassword (int id,Employe name){
-        Employe employe =employeRepo.findById(id).orElseThrow();
+    public Employee ubdatePassword (int id, Employee name){
+        Employee employe =employeRepo.findById(id).orElseThrow();
         employe.setPassword(name.getPassword());
         employeRepo.save(employe);
         return employe;

@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-public class Employe {
+public class Employee {
     @Id
     @SequenceGenerator(
             name = "EMPLOYE_sequence",
@@ -30,5 +30,4 @@ public class Employe {
     private String email;
     @Column
     private String password;
-
 }
